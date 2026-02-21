@@ -12,49 +12,70 @@ const steps = [
   {
     id: 'home',
     title: 'Home',
+    short: 'Start',
     desc: 'Open the site. This is the starting point.',
+    action: 'Open the site (start).',
     url: base,
+    destUrl: base,
     highlight: null,
   },
   {
     id: 'security',
     title: 'Go to Security',
+    short: 'Navigate to Security',
     desc: 'Click **Security** in the menu.',
+    action: 'Click Security in the menu.',
     url: base,
+    destUrl: base + 'security.html',
     highlight: 'nav a[href="security.html"]',
   },
   {
     id: 'auth',
     title: 'Go to Auth',
+    short: 'Navigate to Auth',
     desc: 'Click **Auth** in the menu.',
+    action: 'Click Auth in the menu.',
     url: base + 'security.html',
+    destUrl: base + 'auth.html',
     highlight: 'nav a[href="auth.html"]',
   },
   {
     id: 'frontend',
     title: 'Go to Frontend',
+    short: 'Navigate to Frontend',
     desc: 'Click **Frontend** in the menu.',
+    action: 'Click Frontend in the menu.',
     url: base + 'auth.html',
+    destUrl: base + 'frontend.html',
     highlight: 'nav a[href="frontend.html"]',
   },
   {
     id: 'backend',
     title: 'Go to Backend',
+    short: 'Navigate to Backend',
     desc: 'Click **Backend** in the menu.',
+    action: 'Click Backend in the menu.',
     url: base + 'frontend.html',
+    destUrl: base + 'backend.html',
     highlight: 'nav a[href="backend.html"]',
   },
   {
     id: 'architecture',
     title: 'Go to Architecture',
+    short: 'Navigate to Architecture',
     desc: 'Click **Architecture** in the menu.',
+    action: 'Click Architecture in the menu.',
     url: base + 'backend.html',
+    destUrl: base + 'architecture.html',
     highlight: 'nav a[href="architecture.html"]',
   },  {
     id: 'done',
     title: 'Done',
+    short: 'Test complete',
     desc: 'Test klart.',
+    action: 'Verify the test is complete.',
     url: base + 'architecture.html',
+    destUrl: base + 'architecture.html',
     highlight: null,
   },
 
@@ -79,6 +100,7 @@ const results = [];
 
 for (const step of steps) {
   await page.goto(step.url, { waitUntil: 'networkidle' });
+  const currentUrl = page.url();
 
   let circle = null;
   if (step.highlight) {
@@ -101,7 +123,7 @@ for (const step of steps) {
   const file = `${step.id}.png`;
   await page.screenshot({ path: path.join(assetsDir, file), fullPage: false });
 
-  results.push({ ...step, file, circle });
+  results.push({ ...step, file, circle, currentUrl });
 }
 
 await browser.close();
@@ -128,7 +150,7 @@ const html = `<!doctype html>
     .shotWrap{ position:relative; display:inline-block; padding:0; border:0; background:transparent; }
     .shotSvg{ display:block; width: 100%; height:auto; max-width: 100%; background:#000; border:4px solid #bdbdbd; border-radius:0; }
     .circleSvg{ fill:none; stroke: var(--accent); stroke-width: 4; }
-    .note{ color:var(--muted); font-size:12px; margin-top:8px; }
+    .note{ color:var(--muted); font-size:12px; margin-top:8px; margin-bottom:4px; }
     .pill{ display:inline-block; font-size:12px; color:var(--muted); border:1px solid var(--border); padding:4px 8px; border-radius:999px; margin-top:10px; }
   </style>
 </head>
@@ -145,14 +167,14 @@ const html = `<!doctype html>
       return `
       <section class="slide">
         <div class="title">${i+1}. ${escHtml(s.title)}</div>
-        <p class="desc">${mdLite(s.desc)}</p>
+        <div class="note"><strong>Page url:</strong> <a style="color:#8ab4f8" href="${escHtml(s.currentUrl)}" target="_blank" rel="noreferrer">${escHtml(s.currentUrl)}</a></div>
+        <div class="note" style="margin-bottom:14px"><strong>Action:</strong> ${escHtml(s.action || s.desc)}</div>
         <div class="shotWrap">
           <svg class="shotSvg" viewBox="0 0 ${viewport.width} ${viewport.height}" preserveAspectRatio="xMinYMin meet" role="img" aria-label="${escHtml(s.title)} screenshot">
             <image href="assets/${escHtml(s.file)}" x="0" y="0" width="${viewport.width}" height="${viewport.height}" />
             ${s.circle ? `<circle cx="${s.circle.cx.toFixed(1)}" cy="${s.circle.cy.toFixed(1)}" r="${s.circle.r.toFixed(1)}" class="circleSvg" />` : ''}
           </svg>
         </div>
-        <div class="note">URL: <a style="color:#8ab4f8" href="${escHtml(s.url)}" target="_blank" rel="noreferrer">${escHtml(s.url)}</a></div>
       </section>`;
     }).join('\n')}
 
