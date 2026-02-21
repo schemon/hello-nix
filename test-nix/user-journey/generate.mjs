@@ -50,7 +50,14 @@ const steps = [
     desc: 'Click **Architecture** in the menu.',
     url: base + 'backend.html',
     highlight: 'nav a[href="architecture.html"]',
+  },  {
+    id: 'done',
+    title: 'Done',
+    desc: 'Test klart.',
+    url: base + 'architecture.html',
+    highlight: null,
   },
+
 ];
 
 function escHtml(s){
