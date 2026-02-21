@@ -4,7 +4,7 @@ import { chromium } from 'playwright';
 
 const outDir = path.resolve('test-nix/user-journey');
 const assetsDir = path.join(outDir, 'assets');
-const base = 'https://schemon.github.io/hello-nix/';
+const base = (process.env.BASE_URL || 'https://schemon.github.io/hello-nix/').replace(/\/+$/, '/');
 
 const viewport = { width: 1280, height: 720 };
 
