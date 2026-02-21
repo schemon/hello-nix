@@ -18,14 +18,8 @@
     .desc{ color: var(--fg); opacity:.9; margin:0 0 12px; line-height:1.5; }
 
     .shotWrap{ position:relative; display:inline-block; border:1px solid var(--border); background:#050505; }
-    .shot{ display:block; width: 100%; height:auto; max-width: 100%; }
-    .circle{
-      position:absolute;
-      border: 3px solid var(--accent);
-      border-radius: 999px;
-      box-shadow: 0 0 0 4px rgba(255,59,48,.18);
-      pointer-events:none;
-    }
+    .shotSvg{ display:block; width: 100%; height:auto; max-width: 100%; }
+    .circleSvg{ fill:none; stroke: var(--accent); stroke-width: 4; }
     .note{ color:var(--muted); font-size:12px; margin-top:8px; }
     .pill{ display:inline-block; font-size:12px; color:var(--muted); border:1px solid var(--border); padding:4px 8px; border-radius:999px; margin-top:10px; }
   </style>
@@ -35,7 +29,7 @@
     <header>
       <h1>User journey (static)</h1>
       <div class="sub">One interaction per slide. Generated screenshots with click targets circled. Path: <code>/test-nix/user-journey/</code></div>
-      <div class="pill">Updated: 2026-02-21T15:38:44.642Z</div>
+      <div class="pill">Updated: 2026-02-21T15:39:48.983Z</div>
     </header>
 
     
@@ -43,8 +37,10 @@
         <div class="title">1. Home</div>
         <p class="desc">Open the site. This is the starting point.</p>
         <div class="shotWrap">
-          <img class="shot" src="assets/home.png" alt="Home screenshot" width="1280" height="720" />
-          
+          <svg class="shotSvg" viewBox="0 0 1280 720" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Home screenshot">
+            <image href="assets/home.png" x="0" y="0" width="1280" height="720" />
+            
+          </svg>
         </div>
         <div class="note">URL: <a style="color:#8ab4f8" href="https://schemon.github.io/hello-nix/" target="_blank" rel="noreferrer">https://schemon.github.io/hello-nix/</a></div>
       </section>
@@ -53,8 +49,10 @@
         <div class="title">2. Go to Security</div>
         <p class="desc">Click <strong>Security</strong> in the menu.</p>
         <div class="shotWrap">
-          <img class="shot" src="assets/security.png" alt="Go to Security screenshot" width="1280" height="720" />
-          <div class="circle" style="left:20.6445%;top:9.0137%;width:6.9690%;height:12.3893%;"></div>
+          <svg class="shotSvg" viewBox="0 0 1280 720" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Go to Security screenshot">
+            <image href="assets/security.png" x="0" y="0" width="1280" height="720" />
+            <circle cx="308.9" cy="109.5" r="44.6" class="circleSvg" />
+          </svg>
         </div>
         <div class="note">URL: <a style="color:#8ab4f8" href="https://schemon.github.io/hello-nix/" target="_blank" rel="noreferrer">https://schemon.github.io/hello-nix/</a></div>
       </section>
@@ -63,8 +61,10 @@
         <div class="title">3. Go to Auth</div>
         <p class="desc">Click <strong>Auth</strong> in the menu.</p>
         <div class="shotWrap">
-          <img class="shot" src="assets/auth.png" alt="Go to Auth screenshot" width="1280" height="720" />
-          <div class="circle" style="left:26.9885%;top:8.4039%;width:5.1550%;height:9.1645%;"></div>
+          <svg class="shotSvg" viewBox="0 0 1280 720" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Go to Auth screenshot">
+            <image href="assets/auth.png" x="0" y="0" width="1280" height="720" />
+            <circle cx="378.4" cy="93.5" r="33.0" class="circleSvg" />
+          </svg>
         </div>
         <div class="note">URL: <a style="color:#8ab4f8" href="https://schemon.github.io/hello-nix/security.html" target="_blank" rel="noreferrer">https://schemon.github.io/hello-nix/security.html</a></div>
       </section>
@@ -73,8 +73,10 @@
         <div class="title">4. Go to Frontend</div>
         <p class="desc">Click <strong>Frontend</strong> in the menu.</p>
         <div class="shotWrap">
-          <img class="shot" src="assets/frontend.png" alt="Go to Frontend screenshot" width="1280" height="720" />
-          <div class="circle" style="left:31.5186%;top:6.4486%;width:7.3547%;height:13.0751%;"></div>
+          <svg class="shotSvg" viewBox="0 0 1280 720" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Go to Frontend screenshot">
+            <image href="assets/frontend.png" x="0" y="0" width="1280" height="720" />
+            <circle cx="450.5" cy="93.5" r="47.1" class="circleSvg" />
+          </svg>
         </div>
         <div class="note">URL: <a style="color:#8ab4f8" href="https://schemon.github.io/hello-nix/auth.html" target="_blank" rel="noreferrer">https://schemon.github.io/hello-nix/auth.html</a></div>
       </section>
@@ -83,8 +85,10 @@
         <div class="title">5. Go to Backend</div>
         <p class="desc">Click <strong>Backend</strong> in the menu.</p>
         <div class="shotWrap">
-          <img class="shot" src="assets/backend.png" alt="Go to Backend screenshot" width="1280" height="720" />
-          <div class="circle" style="left:38.2483%;top:6.6157%;width:7.1667%;height:12.7409%;"></div>
+          <svg class="shotSvg" viewBox="0 0 1280 720" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Go to Backend screenshot">
+            <image href="assets/backend.png" x="0" y="0" width="1280" height="720" />
+            <circle cx="535.4" cy="93.5" r="45.9" class="circleSvg" />
+          </svg>
         </div>
         <div class="note">URL: <a style="color:#8ab4f8" href="https://schemon.github.io/hello-nix/frontend.html" target="_blank" rel="noreferrer">https://schemon.github.io/hello-nix/frontend.html</a></div>
       </section>
@@ -93,8 +97,10 @@
         <div class="title">6. Go to Architecture</div>
         <p class="desc">Click <strong>Architecture</strong> in the menu.</p>
         <div class="shotWrap">
-          <img class="shot" src="assets/architecture.png" alt="Go to Architecture screenshot" width="1280" height="720" />
-          <div class="circle" style="left:44.7900%;top:4.9566%;width:9.0332%;height:16.0590%;"></div>
+          <svg class="shotSvg" viewBox="0 0 1280 720" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Go to Architecture screenshot">
+            <image href="assets/architecture.png" x="0" y="0" width="1280" height="720" />
+            <circle cx="631.1" cy="93.5" r="57.8" class="circleSvg" />
+          </svg>
         </div>
         <div class="note">URL: <a style="color:#8ab4f8" href="https://schemon.github.io/hello-nix/backend.html" target="_blank" rel="noreferrer">https://schemon.github.io/hello-nix/backend.html</a></div>
       </section>

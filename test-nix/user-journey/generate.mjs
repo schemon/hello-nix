@@ -119,14 +119,8 @@ const html = `<!doctype html>
     .desc{ color: var(--fg); opacity:.9; margin:0 0 12px; line-height:1.5; }
 
     .shotWrap{ position:relative; display:inline-block; border:1px solid var(--border); background:#050505; }
-    .shot{ display:block; width: 100%; height:auto; max-width: 100%; }
-    .circle{
-      position:absolute;
-      border: 3px solid var(--accent);
-      border-radius: 999px;
-      box-shadow: 0 0 0 4px rgba(255,59,48,.18);
-      pointer-events:none;
-    }
+    .shotSvg{ display:block; width: 100%; height:auto; max-width: 100%; }
+    .circleSvg{ fill:none; stroke: var(--accent); stroke-width: 4; }
     .note{ color:var(--muted); font-size:12px; margin-top:8px; }
     .pill{ display:inline-block; font-size:12px; color:var(--muted); border:1px solid var(--border); padding:4px 8px; border-radius:999px; margin-top:10px; }
   </style>
@@ -140,16 +134,16 @@ const html = `<!doctype html>
     </header>
 
     ${results.map((s, i) => {
-      const circleStyle = s.circle
-        ? `left:${((s.circle.cx - s.circle.r) / 1280 * 100).toFixed(4)}%;top:${((s.circle.cy - s.circle.r) / 720 * 100).toFixed(4)}%;width:${((s.circle.r*2) / 1280 * 100).toFixed(4)}%;height:${((s.circle.r*2) / 720 * 100).toFixed(4)}%;`
-        : '';
+      const circleStyle = '';
       return `
       <section class="slide">
         <div class="title">${i+1}. ${escHtml(s.title)}</div>
         <p class="desc">${mdLite(s.desc)}</p>
         <div class="shotWrap">
-          <img class="shot" src="assets/${escHtml(s.file)}" alt="${escHtml(s.title)} screenshot" width="${viewport.width}" height="${viewport.height}" />
-          ${s.circle ? `<div class="circle" style="${circleStyle}"></div>` : ''}
+          <svg class="shotSvg" viewBox="0 0 ${viewport.width} ${viewport.height}" preserveAspectRatio="xMinYMin meet" role="img" aria-label="${escHtml(s.title)} screenshot">
+            <image href="assets/${escHtml(s.file)}" x="0" y="0" width="${viewport.width}" height="${viewport.height}" />
+            ${s.circle ? `<circle cx="${s.circle.cx.toFixed(1)}" cy="${s.circle.cy.toFixed(1)}" r="${s.circle.r.toFixed(1)}" class="circleSvg" />` : ''}
+          </svg>
         </div>
         <div class="note">URL: <a style="color:#8ab4f8" href="${escHtml(s.url)}" target="_blank" rel="noreferrer">${escHtml(s.url)}</a></div>
       </section>`;
