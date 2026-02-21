@@ -125,8 +125,8 @@ const html = `<!doctype html>
     .title{ font-size:18px; margin:0 0 8px; }
     .desc{ color: var(--fg); opacity:.9; margin:0 0 12px; line-height:1.5; }
 
-    .shotWrap{ position:relative; display:inline-block; border:1px solid var(--border); background:#050505; }
-    .shotSvg{ display:block; width: 100%; height:auto; max-width: 100%; }
+    .shotWrap{ position:relative; display:inline-block; padding:14px; border:1px solid #333; border-radius:12px; background:#070707; box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+    .shotSvg{ display:block; width: 100%; height:auto; max-width: 100%; background:#000; border:1px solid #1f1f1f; }
     .circleSvg{ fill:none; stroke: var(--accent); stroke-width: 4; }
     .note{ color:var(--muted); font-size:12px; margin-top:8px; }
     .pill{ display:inline-block; font-size:12px; color:var(--muted); border:1px solid var(--border); padding:4px 8px; border-radius:999px; margin-top:10px; }
