@@ -141,7 +141,7 @@ const html = `<!doctype html>
 
     ${results.map((s, i) => {
       const circleStyle = s.circle
-        ? `left:${(s.circle.cx - s.circle.r).toFixed(1)}px;top:${(s.circle.cy - s.circle.r).toFixed(1)}px;width:${(s.circle.r*2).toFixed(1)}px;height:${(s.circle.r*2).toFixed(1)}px;`
+        ? `left:${((s.circle.cx - s.circle.r) / ${1280} * 100).toFixed(4)}%;top:${((s.circle.cy - s.circle.r) / ${720} * 100).toFixed(4)}%;width:${((s.circle.r*2) / ${1280} * 100).toFixed(4)}%;height:${((s.circle.r*2) / ${720} * 100).toFixed(4)}%;`
         : '';
       return `
       <section class="slide">
