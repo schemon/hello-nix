@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frontend • Best Practices</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Frontend</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="security.html">Security</a>
+        <a href="auth.html">Auth</a>
+        <a href="frontend.html">Frontend</a>
+        <a href="backend.html">Backend</a>
+        <a href="architecture.html">Architecture</a>
+      </nav>
+    </header>
+
+    <main>
+      <p>Frontend is UX + performance + reliability.</p>
+
+      <h2>Basics</h2>
+      <ul>
+        <li>Ship less JavaScript.</li>
+        <li>Handle loading, empty states, and errors explicitly.</li>
+        <li>Accessibility: semantic HTML first, then ARIA if needed.</li>
+        <li>Keep design tokens (spacing, color, typography) consistent.</li>
+      </ul>
+
+      <h2>Observability</h2>
+      <ul>
+        <li>Track key user flows. Measure time-to-interactive.</li>
+        <li>Capture client errors with stack traces and release versions.</li>
+      </ul>
+    </main>
+
+    <footer>Static content. /nix</footer>
+  </div>
+  <script src="common.js"></script>
+</body>
+</html>

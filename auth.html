@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auth • Best Practices</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Auth</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="security.html">Security</a>
+        <a href="auth.html">Auth</a>
+        <a href="frontend.html">Frontend</a>
+        <a href="backend.html">Backend</a>
+        <a href="architecture.html">Architecture</a>
+      </nav>
+    </header>
+
+    <main>
+      <p>Authentication is identity. Authorization is permissions. Mixing them makes everyone sad.</p>
+
+      <h2>Recommendations</h2>
+      <ul>
+        <li>Use a well-supported identity provider (OIDC/OAuth2).</li>
+        <li>Use short-lived tokens, rotate keys, and validate audiences/issuers.</li>
+        <li>Separate user auth from service-to-service auth.</li>
+        <li>For sessions: HttpOnly + Secure cookies; avoid storing tokens in localStorage.</li>
+      </ul>
+
+      <h2>Common foot-guns</h2>
+      <ul>
+        <li>Missing token revocation strategy.</li>
+        <li>Over-scoped tokens (“admin” everywhere).</li>
+        <li>Not checking tenant/org boundaries.</li>
+      </ul>
+    </main>
+
+    <footer>Static content. /nix</footer>
+  </div>
+  <script src="common.js"></script>
+</body>
+</html>

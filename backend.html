@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Backend • Best Practices</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Backend</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="security.html">Security</a>
+        <a href="auth.html">Auth</a>
+        <a href="frontend.html">Frontend</a>
+        <a href="backend.html">Backend</a>
+        <a href="architecture.html">Architecture</a>
+      </nav>
+    </header>
+
+    <main>
+      <p>Backends should be boring, predictable, and cheap to operate.</p>
+
+      <h2>API design</h2>
+      <ul>
+        <li>Version your API. Document breaking changes.</li>
+        <li>Idempotency for writes (especially payments/webhooks).</li>
+        <li>Explicit timeouts and retries (with jitter).</li>
+      </ul>
+
+      <h2>Data</h2>
+      <ul>
+        <li>Use migrations. Avoid manual prod edits.</li>
+        <li>Index for queries you actually run.</li>
+        <li>Have a clear retention policy.</li>
+      </ul>
+    </main>
+
+    <footer>Static content. /nix</footer>
+  </div>
+  <script src="common.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security • Best Practices</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Security</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="security.html">Security</a>
+        <a href="auth.html">Auth</a>
+        <a href="frontend.html">Frontend</a>
+        <a href="backend.html">Backend</a>
+        <a href="architecture.html">Architecture</a>
+      </nav>
+    </header>
+
+    <main>
+      <p>Security is mostly hygiene and consistency.</p>
+
+      <h2>Baseline checklist</h2>
+      <ul>
+        <li>Use a secret manager. No secrets in git.</li>
+        <li>Least privilege by default.</li>
+        <li>Patch dependencies. Automate updates where possible.</li>
+        <li>Log auth events and admin actions.</li>
+        <li>Backups + restore drills.</li>
+      </ul>
+
+      <h2>Don’t</h2>
+      <ul>
+        <li>Don’t roll your own crypto.</li>
+        <li>Don’t rely on “security through obscurity”.</li>
+      </ul>
+    </main>
+
+    <footer>Static content. /nix</footer>
+  </div>
+  <script src="common.js"></script>
+</body>
+</html>

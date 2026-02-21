@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Architecture • Best Practices</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Architecture</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="security.html">Security</a>
+        <a href="auth.html">Auth</a>
+        <a href="frontend.html">Frontend</a>
+        <a href="backend.html">Backend</a>
+        <a href="architecture.html">Architecture</a>
+      </nav>
+    </header>
+
+    <main>
+      <p>Architecture is the set of constraints that keep you fast later.</p>
+
+      <h2>Rules of thumb</h2>
+      <ul>
+        <li>Start monolithic. Split when you have pain + evidence.</li>
+        <li>Prefer clear boundaries (modules) before distributed systems.</li>
+        <li>Write ADRs (Architecture Decision Records) for big calls.</li>
+        <li>Make failure modes explicit: what happens when X is down?</li>
+      </ul>
+
+      <h2>Deployments</h2>
+      <ul>
+        <li>Automate deploys. Human clicks are a reliability bug.</li>
+        <li>Keep environments consistent. Drift kills.</li>
+      </ul>
+    </main>
+
+    <footer>Static content. /nix</footer>
+  </div>
+  <script src="common.js"></script>
+</body>
+</html>
