@@ -4,6 +4,18 @@ This folder contains a generated, static walkthrough page that documents the cli
 
 ## Rule of thumb (so we don’t forget)
 
+## Approval gate (treat as production)
+
+**Do not push/deploy changes** to the user-journey page until Simon has reviewed and approved the latest *local full-page screenshot*.
+
+Workflow:
+1. Generate locally
+2. Take full-page screenshot
+3. Share with Simon
+4. **Wait for explicit approval**
+5. Then push/deploy
+
+
 **Before deploy / push:**
 1. Generate the walkthrough against a *local* build.
 2. Take a **full-page screenshot** of the walkthrough.
